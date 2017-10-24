@@ -122,7 +122,7 @@ func Parallel(ctx context.Context, fns ...func(context.Context) error) (err erro
 
 type listener struct {
 	sync.WaitGroup
-	ch chan<- interface{}
+	ch chan interface{}
 }
 
 // A broadcasting channel. Use Broadcast() to get a channel for
