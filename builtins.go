@@ -20,13 +20,15 @@ func Go(fn func()) {
 // Log an error.
 func Log(err error) {
 	if err != nil {
-		log.Printf("ignored: %s", err)
+		log.Print(err)
 	}
 }
 
 // Ignore an error. This implementation logs it.
 func Ignore(err error) {
-	Log(err)
+	if err != nil {
+		log.Printf("ignored: %s", err)
+	}
 }
 
 // An error caused by a panic.
