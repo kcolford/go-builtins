@@ -17,11 +17,16 @@ func Go(fn func()) {
 	}()
 }
 
-// Ignore an error. This implementation logs it.
-func Ignore(err error) {
+// Log an error.
+func Log(err error) {
 	if err != nil {
 		log.Printf("ignored: %s", err)
 	}
+}
+
+// Ignore an error. This implementation logs it.
+func Ignore(err error) {
+	Log(err)
 }
 
 // An error caused by a panic.
